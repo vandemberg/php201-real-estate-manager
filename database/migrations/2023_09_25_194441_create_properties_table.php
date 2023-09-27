@@ -14,8 +14,17 @@ return new class extends Migration
         Schema::create('properties', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('code')->unique();
+            $table->string('code');
+            $table->string('description');
+            $table->decimal('price', 10, 2);
+            $table->integer('bedrooms');
+            $table->integer('bathrooms');
+            $table->integer('garages');
+            $table->string('image');
+            $table->unsignedBigInteger('broker_id');
             $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('broker_id')->references('id')->on('brokers');
             $table->timestamps();
         });
     }
