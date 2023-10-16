@@ -21,4 +21,9 @@ class Property extends Model
         'user_id',
         'broker_id',
     ];
+
+    public function broker()
+    {
+        return $this->belongsTo(Broker::class);
+    }
 }
