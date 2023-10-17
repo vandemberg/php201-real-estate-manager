@@ -9,4 +9,9 @@ class Broker extends Model
 {
     use HasFactory;
     protected $fillable = ['user_id', 'name', 'email'];
+
+    public function properties()
+    {
+        return $this->hasMany(Property::class);
+    }
 }
