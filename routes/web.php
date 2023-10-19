@@ -8,5 +8,8 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/properties/{property}', [HomeController::class, 'show'])->name('property.index');
 Route::post('/properties/{property}/leads', [HomeController::class, 'leads'])->name('property.leads');
 Route::get('/brokers', [HomeController::class, 'brokers'])->name('brokers');
+Route::get('/dashboard', [HomeController::class, 'dashboard'])
+    ->middleware('auth')
+    ->name('dashboard');
 
 require __DIR__.'/auth.php';

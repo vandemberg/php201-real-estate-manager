@@ -17,13 +17,13 @@
                 <div class="font-bold text-xl mb-2">{{$property->title}}</div>
                 <p class="text-gray-700 text-base">{{$property->address}}</p>
                 <div class="pl-5">
-                    <p class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{{$property->code}}</p>
-                    <p>Description: {trimDescription($property->description)}</p>
-                    <p>Price: {{$property->price}}</p>
-                    <p>Bedrooms: {{$property->bedrooms}}</p>
-                    <p>Bathrooms: {{$property->bathrooms}}</p>
-                    <p>Garages: {{$property->garages}}</p>
-                    <p>Responsible: {{$property->broker_id}}</p>
+                    <p class="code inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{{$property->code}}</p>
+                    <p id="description">Description: {{ $property->description }}</p>
+                    <p id="price">Price: {{$property->price}}</p>
+                    <p id="bedrooms">Bedrooms: {{$property->bedrooms}}</p>
+                    <p id="bathrooms">Bathrooms: {{$property->bathrooms}}</p>
+                    <p id="garages">Garages: {{$property->garages}}</p>
+                    <p id="responsible">Responsible: {{$property->broker_id}}</p>
                 </div>
 
                 <form class="mt-10" method="POST" action="/properties/{{$property->id}}/leads">
